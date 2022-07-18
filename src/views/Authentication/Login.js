@@ -2,14 +2,60 @@ import Input from "../../components/reuseables/Input";
 import emailIcon from "../../assert/email.svg"
 import passwordIcon from "../../assert/password.svg"
 import "./login.css"
-
-const handleClick = (e) => {
-    console.log(e)
-}
-
+import { useState } from "react";
 
 const Login = () => {
-    return (
+    const [userInput, setUserInput] = useState({})
+    const [fieldError, setFieldError] = useState(
+        {email: {message: "", error: false}}
+        )
+
+    const handleChange = (e) => {
+        setUserInput({...userInput, [e.target.name]: e.target.value})
+
+    }
+
+const handleClick = () => {
+    console.log(userInput)
+
+
+    }
+    const checkIfFieldIsEmpty = (e) => {
+        switch(e.target.name) {
+            case "email":
+                if(e.target.value === ""){
+                    setFieldError(
+                        {...fieldError, 
+                            [e.target.name] : 
+                            {
+                                message: "please enter a valid email",
+                        error: true
+                    }
+                })
+                }
+                break;
+            case "password": 
+            if(e.target.value === ""){
+                setFieldError(
+                    {...fieldError, 
+                        [e.target.name] : 
+                        {message: "please enter a valid password",
+                    error: true
+                }
+            })
+            }
+            break
+
+                default: 
+                break;
+        }
+
+        if (e.target.value === '') return true
+    }
+    const checkIfItIsEmail = () => {
+        
+    }
+     return (
         <div className="loginContainer">
             <div className="leftSide">
                 <div className="leftSide-container">
@@ -29,13 +75,21 @@ const Login = () => {
                             aimed at helping you facilitate a smooth event</p>
                     </div>
                     <div className="input-button-fields">
-                        <Input text="email" handleClick={handleClick} icon={emailIcon} label="email"/>
-                        <Input text="password" handleClick={handleClick} icon={passwordIcon} label="password"/>
-                        <button>Create An Account</button>
+                        <Input text="email" handleChange={handleChange} icon={emailIcon} label="email"/>
+                        <p className={fieldError.email.error ? "fieldError" : "noFieldError"}>
+                            {fieldError.email.message}
+                        </p>
+                        <Input text="password" handleChange={handleChange} icon={passwordIcon} label="password"/>
+                        <p className={fieldError.password.error ? "fieldError" : "noFieldError"}>
+                            {fieldError.password.message}
+                        </p>
+                        <button onClick={handleClick}>Create An Account</button>
                     </div>
                     <div className="social-media">
                         <a>
-                            <div className="social-media-icon"></div>
+                            <div className="social-media-icon">
+                                
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -47,4 +101,5 @@ const Login = () => {
     )
 
 }
+
 export default Login
