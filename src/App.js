@@ -1,12 +1,12 @@
 import './App.css';
 import Login from "./views/Authentication/Login";
-import Input from "./components/reuseables/Input"
+import Register from "./views/Authentication/Register";
 
 const App = () => {
   return (
     <div className="app">
-      {/*<Input/>*/}
-    <Login/>
+    {/*<Login/>*/}
+    <Register/>
     </div>
   );
 }

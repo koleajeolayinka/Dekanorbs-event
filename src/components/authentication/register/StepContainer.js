@@ -1,13 +1,18 @@
 import React from "react";
-const Step1 = ({ children, step}) => {
+
+const StepContainer = ({ children, step, headerTitle}) => {
     return(
         <div className="registration-step-container">
-            <div>
-                {`Step `}
+            <div className="header-container">
+                <p>{headerTitle}</p>
+
+            <div className="step-icon">
+                {`Step ${step}`}
+            </div>
             </div>
             {children}
 
         </div>
     )
 }
-export default Step1
+export default StepContainer

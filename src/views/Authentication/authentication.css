@@ -1,4 +1,4 @@
-.loginContainer{
+.authenticationContainer{
     display: flex;
     width: 100vw;
     min-height: 100vh;
@@ -20,7 +20,7 @@
 }
 .welcome-text h1 {
     margin: 0;
-    color: lightgoldenrodyellow;
+    color: #dede00;
 }
 .welcome-text p {
     margin: 5px 0;
@@ -31,15 +31,16 @@
 .leftSide-container {
  width: 80%;
 }
-.input-button-fields button{
+.authentication-button {
     border: unset;
     background-color: var(--primary_green);
     color: var(--primary_black);
     font-weight: bold;
     font-size: 14px;
     border-radius: 4px;
-    width: 350px;
+
     height: 50px;
+    cursor: pointer;
 }
 .leftSide-container a {
     text-emphasis: none;
@@ -59,6 +60,54 @@
     margin: 10px 0;
 }
 
-.input-button-fields{
+.authentication-button{
     margin: 3rem 0;
+}
+.registration-step-container{
+    /*border: 1px solid lightgray;*/
+    border-radius: 4px;
+    /*padding: 10px;*/
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.step-icon{
+    height: min-content;
+    float: right;
+    background-color: white;
+    color: var(--primary_green);
+    font-size: 13px;
+    font-weight: bold;
+    width: 12%;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+
+}
+.registration-step-container .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.registration-step-container .header-container {
+    color: var(--primary_green);
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+}
+.authentication-button-alternate {
+    background-color: transparent;
+    /*background-color: white;*/
+    color: var(--primary_green);
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.okay{
+    color: #ffffff;
+
+
 }

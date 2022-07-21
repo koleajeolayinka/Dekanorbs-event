@@ -1,94 +1,116 @@
 import Input from "../../components/reuseables/Input";
 import emailIcon from "../../assert/email.svg"
 import passwordIcon from "../../assert/password.svg"
-import "./login.css"
-import { useState } from "react";
+import "./authentication.css"
+import {useState} from "react";
 
 const Login = () => {
     const [userInput, setUserInput] = useState({})
     const [fieldError, setFieldError] = useState(
-        {email: {message: "", error: false}}
-        )
+        {email: {message: "", error: false},
+        password: {message: "", error: false}}
+    )
 
     const handleChange = (e) => {
         setUserInput({...userInput, [e.target.name]: e.target.value})
+        checkIfFieldIsEmpty(e)
 
     }
 
-const handleClick = () => {
-    console.log(userInput)
+    const handleClick = () => {
+        console.log(userInput)
 
 
     }
     const checkIfFieldIsEmpty = (e) => {
-        switch(e.target.name) {
+        switch (e.target.name) {
             case "email":
-                if(e.target.value === ""){
+                if (e.target.value === "") {
                     setFieldError(
-                        {...fieldError, 
-                            [e.target.name] : 
-                            {
-                                message: "please enter a valid email",
-                        error: true
-                    }
-                })
+                        {
+                            ...fieldError,
+                            [e.target.name]:
+                                {
+                                    message: "please enter a valid email",
+                                    error: true
+                                }
+                        })
+                }else {
+                    setFieldError(
+                        {
+                            ...fieldError,
+                            [e.target.name]:
+                                {
+                                    message: "please enter a valid email",
+                                    error: false
+                                }
+                        })
+
                 }
                 break;
-            case "password": 
-            if(e.target.value === ""){
-                setFieldError(
-                    {...fieldError, 
-                        [e.target.name] : 
-                        {message: "please enter a valid password",
-                    error: true
+            case "password":
+                if (e.target.value === '') {
+                    setFieldError(
+                        {
+                            ...fieldError,
+                            [e.target.name]:
+                                {
+                                    message: "please enter a valid password",
+                                    error: true
+                                }
+                        })
+                }else {
+                    setFieldError(
+                        {
+                            ...fieldError,
+                            [e.target.name]:
+                                {
+                                    message: "please enter a valid password",
+                                    error: false
+                                }
+                        })
                 }
-            })
-            }
-            break
+                break
 
-                default: 
+            default:
                 break;
         }
 
         if (e.target.value === '') return true
     }
     const checkIfItIsEmail = () => {
-        
+
     }
-     return (
-        <div className="loginContainer">
+    return (
+        <div className="authenticationContainer">
             <div className="leftSide">
                 <div className="leftSide-container">
 
-                <a>
-                    Have an account?
-                    <span style={{
-                        color: 'var(--primary_green)',
-                        marginLeft: '4px'
-                    }}>
+                    <a>
+                        Have an account?
+                        <span style={{
+                            color: 'var(--primary_green)',
+                            marginLeft: '4px'
+                        }}>
                     Sign Up
                 </span>
-                </a>
+                    </a>
                     <div className="welcome-text">
                         <h1>Welcome To Norbs</h1>
                         <p>We are an event management platform,
                             aimed at helping you facilitate a smooth event</p>
                     </div>
-                    <div className="input-button-fields">
-                        <Input text="email" handleChange={handleChange} icon={emailIcon} label="email"/>
-                        <p className={fieldError.email.error ? "fieldError" : "noFieldError"}>
-                            {fieldError.email.message}
-                        </p>
-                        <Input text="password" handleChange={handleChange} icon={passwordIcon} label="password"/>
-                        <p className={fieldError.password.error ? "fieldError" : "noFieldError"}>
-                            {fieldError.password.message}
-                        </p>
-                        <button onClick={handleClick}>Create An Account</button>
+                    <div className="inp">
+                        <Input text="email" handleChange={handleChange} icon={emailIcon} label="email" fieldError={fieldError}/>
+
+                        <Input text="password" handleChange={handleChange} icon={passwordIcon} label="password" fieldError={fieldError}/>
+                        {/*<Icon defaultColor="lightgrey" />*/}
+                        <button className="authentication-button" onClick={handleClick}>Get Into Norbs</button>
                     </div>
                     <div className="social-media">
                         <a>
                             <div className="social-media-icon">
-                                
+
                             </div>
                         </a>
                     </div>
