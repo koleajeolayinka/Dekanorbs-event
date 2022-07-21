@@ -49,3 +49,16 @@
     margin-bottom: 4rem;
     cursor: pointer;
 }
+.fieldError {
+    color: red;
+    font-size: 12px;
+    margin: 10px 0;
+}
+.noFieldError{
+    color: transparent;
+    margin: 10px 0;
+}
+
+.input-button-fields{
+    margin: 3rem 0;
+}
