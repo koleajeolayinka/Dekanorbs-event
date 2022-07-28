@@ -1,13 +1,16 @@
 import Input from "../../components/reuseables/Input";
 import emailIcon from "../../assert/email.svg"
-import passwordIcon from "../../assert/password.svg"
+import passwordIcon  from "../../assert/password.svg"
 import user from "../../assert/user.svg"
 import phoneNumber from "../../assert/phone.svg"
 import "./authentication.css"
-import {useState} from "react";
+import {useState  } from "react";
 import StepContainer from "../../components/authentication/register/StepContainer";
+import {useNavigate} from "react-router-dom";
 
 const Register = () => {
+
+    let navigate = useNavigate()
     const [userInput, setUserInput] = useState({})
     const [step, setStep] = useState(1)
     const [fieldError, setFieldError] = useState(
@@ -96,14 +99,19 @@ const Register = () => {
             <div className="leftSide">
                 <div className="leftSide-container">
 
-                    <a>
+                    <a onClick={() => navigate("/Login") }>
                         Have an account?
+
                         <span style={{
                             color: 'var(--primary_green)',
                             marginLeft: '4px'
                         }}>
-                    Sign Up
+                            Login in
+                            {/*  <div className="link-register-login" >*/}
+                            {/*<a className="Register-ash" href="./Login"> Login </a>*/}
+                            {/*</div>*/}
                 </span>
+
                     </a>
                     <div className="welcome-text">
                         <h1>Welcome To Norbs</h1>
@@ -126,7 +134,7 @@ const Register = () => {
 
                             Gender:
                             <br/>
-                            <input type="radio" name="gender"/>Male <br/>
+                            <input type="radio" name="gender" />Male <br/>
                             <input type="radio" name="gender"/>Females <br/>
                             <input type="radio" name="gender"/>Others <br/>
                             <br/>

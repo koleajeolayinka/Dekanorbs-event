@@ -9,6 +9,7 @@ const Input = ({text, handleChange, icon, label, fieldError}) => {
                 <div className="label-container">
                     <label>{label}</label>
                 </div>
+
                 <input
                     name={label}
                     type={text}

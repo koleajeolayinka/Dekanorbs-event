@@ -111,3 +111,6 @@
 
 
 }
+.link-register-login a {
+    color: var(--primary_green);
+}
