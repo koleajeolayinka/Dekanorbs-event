@@ -7,6 +7,7 @@ import {useState} from "react";
 import {icons} from "react-icons";
 import Register from "./Register";
 import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
     let navigate = useNavigate()
@@ -26,7 +27,13 @@ const Login = () => {
     }
 
     const handleClick = () => {
-        console.log(userInput)
+        // console.log(userInput)
+        axios.get(`http://localhost:4000/tobDb/?email=${userInput["email"]}`)
+            .then(( result) => {
+                // console.log(data)
+                result.data[0].password === userInput["password"] && navigate("./dashboard")
+            })
+            .catch((error) => console.log(error))
 
 
     }

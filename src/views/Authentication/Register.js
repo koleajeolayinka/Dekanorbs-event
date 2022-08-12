@@ -7,6 +7,7 @@ import "./authentication.css"
 import {useState  } from "react";
 import StepContainer from "../../components/authentication/register/StepContainer";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
 
@@ -31,7 +32,20 @@ const Register = () => {
     }
 
     const handleClick = () => {
-        console.log(userInput)
+
+        // console.log(userInput)
+
+        // let data = {
+        //     // id:2,
+        //     firstname: "tobi",
+        //     lastname: "kolea"
+        // }
+        axios.post(`http://localhost:4000/tobDb/?email=${userInput["email"]}`)
+            .then((data) => {
+                console.log(data)
+            })
+            .catch((error) => console.log(error))
+            // .finally()
 
 
     }
@@ -127,10 +141,10 @@ const Register = () => {
                             <Input text="text" handleChange={handleChange} icon={phoneNumber} label="PhoneNumber"
                                    fieldError={fieldError}/>
 
-                            <Input text="password" handleChange={handleChange} icon={passwordIcon} label="password"
-                                   fieldError={fieldError}/>
-                            <Input text="password" handleChange={handleChange} icon={passwordIcon}
-                                   label="ConfirmPassword" fieldError={fieldError}/>
+                            {/*<Input text="password" handleChange={handleChange} icon={passwordIcon} label="password"*/}
+                            {/*       fieldError={fieldError}/>*/}
+                            {/*<Input text="password" handleChange={handleChange} icon={passwordIcon}*/}
+                            {/*       label="ConfirmPassword" fieldError={fieldError}/>*/}
 
                             Gender:
                             <br/>
@@ -144,12 +158,12 @@ const Register = () => {
 
                     {step === 2 && <StepContainer step={2} headerTitle="let's secure you">
                         <div className="okay">
-                            <Input text="text" handleChange={handleChange} icon={user} label="FullName"
-                                   fieldError={fieldError}/>
-                            <Input text="email" handleChange={handleChange} icon={emailIcon} label="email"
-                                   fieldError={fieldError}/>
-                            <Input text="text" handleChange={handleChange} icon={phoneNumber} label="PhoneNumber"
-                                   fieldError={fieldError}/>
+                            {/*<Input text="text" handleChange={handleChange} icon={user} label="FullName"*/}
+                            {/*       fieldError={fieldError}/>*/}
+                            {/*<Input text="email" handleChange={handleChange} icon={emailIcon} label="email"*/}
+                            {/*       fieldError={fieldError}/>*/}
+                            {/*<Input text="text" handleChange={handleChange} icon={phoneNumber} label="PhoneNumber"*/}
+                            {/*       fieldError={fieldError}/>*/}
 
                             <Input text="password" handleChange={handleChange} icon={passwordIcon} label="password"
                                    fieldError={fieldError}/>

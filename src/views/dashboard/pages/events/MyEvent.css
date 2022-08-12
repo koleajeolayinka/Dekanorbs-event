@@ -1,0 +1,126 @@
+.my-events-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10em;
+    border-radius: 4px;
+    align-items: center;
+    background-color: #e7e5e5;
+}
+.my-events-header > button {
+    background-color: var(--primary_black);
+    border: unset;
+    padding: 12px 30px;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    height: 45px;
+}
+.my-events-header-filter {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#filter-date{
+    width:  200px;
+    height: 15px;
+    padding: 10px;
+    margin-top: 5px;
+
+}
+.my-event-container{
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.my-events-header-filter p {
+    margin: 0;
+    font-size: 12px;
+    color: green;
+    font-weight: bold;
+}
+#filter-search  {
+    width: 30em;
+    height: 40px;
+    margin-top: 5px;
+}
+img {
+    height: 20vh;
+    /*padding-left: 20px;*/
+    width: 20vw;
+
+}
+.icon-cover {
+    background-color: var(--primary_green);
+    padding: 5px;
+    border-radius: 4px;
+}
+.my-event-card {
+    padding: 5px;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+.event-card {
+    display: flex;
+    position: relative;
+    height: 20vh;
+    width: 20vw;
+    background-color: white;
+    border-radius: 6px;
+
+}
+.event-action {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /*z-index: 2;*/
+}
+.image-container {
+    height: 100%;
+    width: 50%;
+    background-size: contain;
+    background: round;
+
+}
+.event-action > button  {
+    background-color: black;
+    color: white ;
+    border-top-left-radius: 6px;
+
+    /*border-radius: 4px;*/
+    padding: 10px 20px;
+    float: right;
+    border: unset;
+    cursor: pointer;
+
+
+}
+.event-action > button:hover {
+    background-color: #303f36;
+    transition: background-color;
+    animation: 9s;
+
+}
+.event-details p {
+    color: gray;
+    font-size: 12px;
+    margin: 0;
+
+}
+.event-details h5 {
+    color: black;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.event-details {
+    padding: 10px;
+}
+p, h5{
+    color: black;
+}
