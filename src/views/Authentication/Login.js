@@ -140,6 +140,15 @@ const Login = () => {
             </div>
             <div className="rightSide">
 
+                <div className="gif">
+
+                    <img src="https://media2.giphy.com/media/3o72EXMO3OZpcvFvzy/giphy.gif?cid=ecf05e474yyg4kh0bsixx0tmxx7ovk1zr8x44fnqs2svqp1x&rid=giphy.gif&ct=g" alt=""/>
+
+
+
+                </div>
+                <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7FF&width=435&lines=Welcome+to+norb+events" alt="Typing SVG" />
+
             </div>
         </div>
     )
