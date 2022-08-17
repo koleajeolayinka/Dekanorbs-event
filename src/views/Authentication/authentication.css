@@ -114,5 +114,9 @@
 .link-register-login a {
     color: var(--primary_green);
 }
+gif img{
+    width: 50%;
+    text-align: center;
+}
 
 /*.authenticationContainer{display:flex;width:100vw;min-height:100vh}.leftSide{width:50%;background-color:var(--primary_black);display:flex;align-items:center;justify-content:center}.rightSide{width:50%;background-color:var(--primary_green)}.welcome-text{margin-top:3rem;width:80%}.welcome-text h1{margin:0;color:#dede00}.welcome-text p{margin:5px 0;color:lightgoldenrodyellow;line-height:25px;font-size:14px}.leftSide-container{width:80%}.authentication-button{border:unset;background-color:var(--primary_green);color:var(--primary_black);font-weight:700;font-size:14px;border-radius:4px;height:50px;cursor:pointer}.leftSide-container a{text-emphasis:none;color:#fff;font-weight:700;font-size:14px;margin-bottom:4rem;cursor:pointer}.fieldError{color:red;font-size:12px;margin:10px 0}.noFieldError{color:transparent;margin:10px 0}.authentication-button{margin:3rem 0}.registration-step-container{border-radius:4px;margin-top:2rem;width:70%}.step-icon{height:min-content;float:right;background-color:#fff;color:var(--primary_green);font-size:13px;font-weight:700;width:12%;padding:5px;border-radius:4px;text-align:center}.registration-step-container .header-container{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.registration-step-container .header-container{color:var(--primary_green);font-size:12px;font-weight:700;margin:0}.authentication-button-alternate{background-color:transparent;color:var(--primary_green);border:1px solid #fff;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer}.okay{color:#fff}.link-register-login a{color:var(--primary_green)}*/
