@@ -9,7 +9,7 @@ const MyEvents = () => {
     const [eventData, setEventData] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:4000/fakeEvents").
+        axios.get("http://localhost:5000/fakeEvents").
         then((result) => setEventData(result.data)).
         catch((error) => console.log(error))
     }, [])
@@ -29,12 +29,14 @@ const MyEvents = () => {
                     <div>
                         <p>Search Events</p>
 
+
                         <input type="search" id ="filter-search"/>
 
                     </div>
 
                 </div>
                 <button>
+                    {/*<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF0000FF&width=435&lines=Create+Events" alt="Typing SVG" />*/}
                     Create Event
                 </button>
             </div>
